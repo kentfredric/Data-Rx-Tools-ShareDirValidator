@@ -102,10 +102,10 @@ my $cache;
 
 sub check {
   my ( $self, $data ) = @_;
-  if ( not exists $cache->{spec} ) {
-    $cache->{spec} = _CLASS($self)->_make_rx;
+  if ( not exists $cache->{ _CLASS($self) } ) {
+    $cache->{ _CLASS($self) } = _CLASS($self)->_make_rx;
   }
-  return $cache->{spec}->check($data);
+  return $cache->{ _CLASS($self) }->check($data);
 }
 
 =method decode_file
