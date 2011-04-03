@@ -82,10 +82,23 @@ use File::ShareDir qw();
 use Path::Class::Dir;
 use Scalar::Util qw( blessed );
 
+=method filename
+
+=cut
+
 sub filename { return 'schema' }
-sub suffix   { return '.json' }
+
+=method suffix
+
+=cut
+
+sub suffix { return '.json' }
 
 my $cache;
+
+=method check
+
+=cut
 
 sub check {
   my ( $self, $data ) = @_;
@@ -94,6 +107,10 @@ sub check {
   }
   return $cache->{spec}->check($data);
 }
+
+=method decode_file
+
+=cut
 
 sub decode_file {
   my ( $self, $file ) = @_;
