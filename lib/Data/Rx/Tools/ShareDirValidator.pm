@@ -89,7 +89,7 @@ my $cache;
 sub check {
   my ( $self, $data ) = @_;
   if ( not exists $cache->{spec} ){
-    $cache->{spec} = $self->_CLASS->_make_rx;
+    $cache->{spec} = _CLASS($self)->_make_rx;
   }
   return $cache->{spec}->check( $data );
 }
@@ -103,24 +103,26 @@ sub decode_file {
 sub _make_rx {
   my ( $self ) = @_;
   return Data::Rx->new()->make_schema(
-    $self->_CLASS->decode_file( $self->_CLASS->_specfile )
+    _CLASS($self)->decode_file( _CLASS($self)->_specfile )
   );
 }
 
 sub _sharedir {
   my ( $self ) = @_;
-  return Path::Class::Dir->new( File::ShareDir::module_dir( $self->_CLASS ) );
+  return Path::Class::Dir->new( File::ShareDir::module_dir( _CLASS($self) ) );
 }
 
 sub _specfile {
   my ( $self ) = @_;
-  return $classname->_sharedir->file( $self->_CLASS->filename . $self->_CLASS->suffix );
+  return _CLASS($self)->_sharedir->file( _CLASS($self)->filename . _CLASS($self)->suffix );
 }
 
 sub _CLASS {
   my ( $classname ) = @_;
-  $classname = blessed $classname if ref $classname && blessed $classname;
-  return $classname;
+  return blessed $classname if ( ref $classname && blessed $classname );
+  return $classname if not ref $classname;
+  require Carp;
+  Carp::croak(q{Argument 0 was an unblessed ref instead of the expected classname, ensure you are calling the method right with $classname->check( $data ) or similar});
 }
 
 1;
