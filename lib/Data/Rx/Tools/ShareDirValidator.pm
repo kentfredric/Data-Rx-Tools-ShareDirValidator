@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 package Data::Rx::Tools::ShareDirValidator;
 
 # ABSTRACT: A Simple base class for generating simple validators based on Data::Rx
@@ -30,7 +31,7 @@ Later:
 =head1 DESCRIPTION
 
 The purpose of this is to make creating a portable validator with Data::Rx as painless as possible, while still
-permitting you to keep the specification itself seperate from the actual implementation.
+permitting you to keep the specification itself separate from the actual implementation.
 
 =head1 IMPLEMENTATION INSTRUCTIONS
 
@@ -40,7 +41,7 @@ permitting you to keep the specification itself seperate from the actual impleme
 
 =item 2. Generate your Data::Rx schema in the format you desire ( ideally JSON ) and place it in the modules "Share" directory.
 
-( ie: With Dist::Zilla, you would do this:
+( i.e.: With Dist::Zilla, you would do this:
 
   [ModuleSharedirs]
   Foo = sharedir/Foo
@@ -56,11 +57,11 @@ or something similar. )
 
 passing the data structure you need validated to check().
 
-=back 4
+=back
 
 =head1 EXTENDING
 
-By default, we assume you want JSON for everything, so by defualt, the suffix is ".json",
+By default, we assume you want JSON for everything, so by default, the suffix is ".json",
 and the default deserialiser is as follows:
 
   sub decode_file {
@@ -81,17 +82,17 @@ use File::ShareDir qw();
 use Path::Class::Dir;
 use Scalar::Util qw( blessed );
 
-sub filename { 'schema' }
-sub suffix   { '.json' }
+sub filename { return 'schema' }
+sub suffix   { return '.json' }
 
 my $cache;
 
 sub check {
   my ( $self, $data ) = @_;
-  if ( not exists $cache->{spec} ){
+  if ( not exists $cache->{spec} ) {
     $cache->{spec} = _CLASS($self)->_make_rx;
   }
-  return $cache->{spec}->check( $data );
+  return $cache->{spec}->check($data);
 }
 
 sub decode_file {
@@ -101,28 +102,28 @@ sub decode_file {
 }
 
 sub _make_rx {
-  my ( $self ) = @_;
-  return Data::Rx->new()->make_schema(
-    _CLASS($self)->decode_file( _CLASS($self)->_specfile )
-  );
+  my ($self) = @_;
+  return Data::Rx->new()->make_schema( _CLASS($self)->decode_file( _CLASS($self)->_specfile ) );
 }
 
 sub _sharedir {
-  my ( $self ) = @_;
+  my ($self) = @_;
   return Path::Class::Dir->new( File::ShareDir::module_dir( _CLASS($self) ) );
 }
 
 sub _specfile {
-  my ( $self ) = @_;
+  my ($self) = @_;
   return _CLASS($self)->_sharedir->file( _CLASS($self)->filename . _CLASS($self)->suffix );
 }
 
 sub _CLASS {
-  my ( $classname ) = @_;
+  my ($classname) = @_;
   return blessed $classname if ( ref $classname && blessed $classname );
   return $classname if not ref $classname;
   require Carp;
-  Carp::croak(q{Argument 0 was an unblessed ref instead of the expected classname, ensure you are calling the method right with $classname->check( $data ) or similar});
+  ## no critic (ValuesAndExpressions::RequireInterpolationOfMetachars)
+  Carp::croak( q{Argument 0 was an unblessed ref instead of the expected classname,}
+      . q{ ensure you are calling the method right with $classname->check( $data ) or similar} );
 }
 
 1;
