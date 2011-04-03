@@ -84,11 +84,16 @@ use Scalar::Util qw( blessed );
 
 =method filename
 
+Defaults to just 'schema' and is combined with L</suffix> to form the name of the file
+to load from the share directory.
+
 =cut
 
 sub filename { return 'schema' }
 
 =method suffix
+
+Defaults to '.json' and is combined with L</filename> to form the name of the file.
 
 =cut
 
@@ -97,6 +102,10 @@ sub suffix { return '.json' }
 my $cache;
 
 =method check
+
+  ClassName->check( $data )
+
+Does all the lifting behind this module and validates the data in $data.
 
 =cut
 
@@ -109,6 +118,12 @@ sub check {
 }
 
 =method decode_file
+
+Defaults to a decoder that can read JSON files.
+
+  ->decode_file( Path::Class::File $file )
+
+Override this method with something else if you don't want JSON files.
 
 =cut
 
