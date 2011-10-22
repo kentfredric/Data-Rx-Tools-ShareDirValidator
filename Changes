@@ -1,6 +1,25 @@
 Release history for Data-Rx-Tools-ShareDirValidator
 
 {{$NEXT}}
+ - Maintenance Release
+
+ [Dependencies::New::Runtime]
+ - strict
+ - warnings
+
+ [Dependencies::Removed::Test]
+ - English
+
+ [Internals]
+ - VERSION no longer declared in BEGIN
+ - All Packages declare $AUTHORITY
+ - Added encoding to POD
+
+ [Packaging]
+ - Update LICENSE ( Indentation, Address )
+ - Move author/release tests to xt/
+ - Git repo URI's now point to https://
+ - Added x_authority
 
 0.1.0 2011-04-03T16:24:10Z
  - First version. Very early release for comments/suggestions/API Changes.
