@@ -3,7 +3,10 @@ use warnings;
 
 package Data::Rx::Tools::ShareDirValidator;
 BEGIN {
-  $Data::Rx::Tools::ShareDirValidator::VERSION = '0.1.0';
+  $Data::Rx::Tools::ShareDirValidator::AUTHORITY = 'cpan:KENTNL';
+}
+{
+  $Data::Rx::Tools::ShareDirValidator::VERSION = '0.1.1';
 }
 
 # ABSTRACT: A Simple base class for generating simple validators based on Data::Rx
@@ -69,13 +72,15 @@ sub _CLASS {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Data::Rx::Tools::ShareDirValidator - A Simple base class for generating simple validators based on Data::Rx
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
