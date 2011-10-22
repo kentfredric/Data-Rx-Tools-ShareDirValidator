@@ -10,4 +10,3 @@ use parent 'Data::Rx::Tools::ShareDirValidator';
 
 1;
 
-
