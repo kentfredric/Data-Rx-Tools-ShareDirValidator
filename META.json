@@ -42,7 +42,7 @@
             "version" : "0.9901"
          },
          "suggests" : {
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "v1.7.1"
+            "Dist::Zilla::PluginBundle::Author::KENTNL" : "v1.7.2"
          }
       },
       "runtime" : {
@@ -93,7 +93,7 @@
       "modules" : {
          "Carp" : "1.28",
          "Data::Rx" : "0.200003",
-         "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.7.1",
+         "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.7.2",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "NA(possibly not installed)",
          "File::Find" : "1.23",
          "File::ShareDir" : "1.03",
@@ -319,7 +319,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
             "name" : "@Author::KENTNL/Author::KENTNL::MinimumPerl",
-            "version" : "1.7.1"
+            "version" : "1.7.2"
          },
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective",
