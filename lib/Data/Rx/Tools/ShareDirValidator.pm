@@ -6,7 +6,7 @@ BEGIN {
   $Data::Rx::Tools::ShareDirValidator::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Data::Rx::Tools::ShareDirValidator::VERSION = '0.1.1';
+  $Data::Rx::Tools::ShareDirValidator::VERSION = '0.1.2';
 }
 
 # ABSTRACT: A Simple base class for generating simple validators based on Data::Rx
@@ -70,6 +70,7 @@ sub _CLASS {
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -80,7 +81,7 @@ Data::Rx::Tools::ShareDirValidator - A Simple base class for generating simple v
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 SYNOPSIS
 
@@ -180,10 +181,9 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
