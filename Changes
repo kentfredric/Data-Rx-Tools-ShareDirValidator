@@ -1,6 +1,13 @@
 ﻿Release history for Data-Rx-Tools-ShareDirValidator
 
 {{$NEXT}}
+ - Shift Internals to Path::Tiny
+
+ [Dependencies::Added / runtime requires]
+ - Path::Tiny
+
+ [Dependencies::Removed / runtime requires]
+ - Path::Class::Dir
 
 0.1.2 2013-04-03T02:59:00Z
  - Maintenance Release for Module::Build 0.4004
