@@ -79,7 +79,7 @@ just do C<slurp()> on it.
 
 use Data::Rx;
 use File::ShareDir qw();
-use Path::Class::Dir;
+use Path::Tiny qw();
 use Scalar::Util qw( blessed );
 
 =method filename
@@ -140,12 +140,12 @@ sub _make_rx {
 
 sub _sharedir {
   my ($self) = @_;
-  return Path::Class::Dir->new( File::ShareDir::module_dir( _CLASS($self) ) );
+  return Path::Tiny::path( File::ShareDir::module_dir( _CLASS($self) ) );
 }
 
 sub _specfile {
   my ($self) = @_;
-  return _CLASS($self)->_sharedir->file( _CLASS($self)->filename . _CLASS($self)->suffix );
+  return _CLASS($self)->_sharedir->child( _CLASS($self)->filename . _CLASS($self)->suffix );
 }
 
 sub _CLASS {

@@ -4,7 +4,7 @@ Data::Rx::Tools::ShareDirValidator - A Simple base class for generating simple v
 
 # VERSION
 
-version 0.1.2
+version 0.1.3
 
 # SYNOPSIS
 
