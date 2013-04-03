@@ -1,12 +1,18 @@
-Release history for Data-Rx-Tools-ShareDirValidator
+﻿Release history for Data-Rx-Tools-ShareDirValidator
 
-0.1.2 2013-04-03T02:51:24Z
+0.1.2 2013-04-03T02:56:19Z
  - Maintenance Release for Module::Build 0.4004
 
- [Documentation]
- - Update Copyright Year.
- - Indent License
- - Update License Address
+ [Dependencies::Added / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite
+ - Pod::Coverage::TrustPod
+ - Test::CPAN::Meta 0
+ - Test::Pod 1.41
+ - Test::Pod::Coverage 1.08
+ - version 0.9901
+
+ [Dependencies::Added / runtime requires]
+ - perl v5.10
 
  [Dependencies::Changed / build requires]
  - Module::Build 0.3601 → 0.4004
@@ -17,17 +23,19 @@ Release history for Data-Rx-Tools-ShareDirValidator
  [Dependencies::Changed / develop recommends]
  - Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0.01009803 → v1.3.0
 
- [Dependencies::Added / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite
- - Pod::Coverage::TrustPod
- - Test::CPAN::Meta 0
- - Test::Pod 1.41
- - Test::Pod::Coverage 1.08
- - version 0.9901
-
  [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0 → v1.7.1
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0 → v1.7.2
 
+ [Dependencies::Changed / test requires]
+ - Test::More 0.96 → 0.98
+
+ [Documentation]
+ - Update Copyright Year.
+ - Indent License
+ - Update License Address
+
+ [Meta]
+ - Bugtracker to github issues
 
 0.1.1 2011-10-22T15:00:07Z
  - Maintenance Release
