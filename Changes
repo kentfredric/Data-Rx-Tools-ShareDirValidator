@@ -1,6 +1,6 @@
 ﻿Release history for Data-Rx-Tools-ShareDirValidator
 
-0.1.2 2013-04-03T02:56:19Z
+0.1.2 2013-04-03T02:58:38Z
  - Maintenance Release for Module::Build 0.4004
 
  [Dependencies::Added / develop requires]
