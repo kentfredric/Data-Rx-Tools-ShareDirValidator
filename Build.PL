@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Data-Rx-Tools-ShareDirValidator",
-  "dist_version" => "0.1.2",
+  "dist_version" => "0.1.3",
   "license" => "perl",
   "module_name" => "Data::Rx::Tools::ShareDirValidator",
   "recommends" => {},
@@ -27,7 +27,7 @@ my %module_build_args = (
     "Data::Rx" => 0,
     "File::ShareDir" => 0,
     "JSON" => 0,
-    "Path::Class::Dir" => 0,
+    "Path::Tiny" => 0,
     "Scalar::Util" => 0,
     "perl" => "v5.10.0",
     "strict" => 0,

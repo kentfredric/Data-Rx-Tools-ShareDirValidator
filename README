@@ -3,7 +3,7 @@ NAME
     simple validators based on Data::Rx
 
 VERSION
-    version 0.1.2
+    version 0.1.3
 
 SYNOPSIS
       package Foo;

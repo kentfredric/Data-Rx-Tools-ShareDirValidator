@@ -6,7 +6,7 @@ BEGIN {
   $Data::Rx::Tools::ShareDirValidator::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Data::Rx::Tools::ShareDirValidator::VERSION = '0.1.2';
+  $Data::Rx::Tools::ShareDirValidator::VERSION = '0.1.3';
 }
 
 # ABSTRACT: A Simple base class for generating simple validators based on Data::Rx
@@ -15,7 +15,7 @@ BEGIN {
 
 use Data::Rx;
 use File::ShareDir qw();
-use Path::Class::Dir;
+use Path::Tiny qw();
 use Scalar::Util qw( blessed );
 
 
@@ -49,12 +49,12 @@ sub _make_rx {
 
 sub _sharedir {
   my ($self) = @_;
-  return Path::Class::Dir->new( File::ShareDir::module_dir( _CLASS($self) ) );
+  return Path::Tiny::path( File::ShareDir::module_dir( _CLASS($self) ) );
 }
 
 sub _specfile {
   my ($self) = @_;
-  return _CLASS($self)->_sharedir->file( _CLASS($self)->filename . _CLASS($self)->suffix );
+  return _CLASS($self)->_sharedir->child( _CLASS($self)->filename . _CLASS($self)->suffix );
 }
 
 sub _CLASS {
@@ -81,7 +81,7 @@ Data::Rx::Tools::ShareDirValidator - A Simple base class for generating simple v
 
 =head1 VERSION
 
-version 0.1.2
+version 0.1.3
 
 =head1 SYNOPSIS
 

@@ -26,13 +26,13 @@ no_index:
 provides:
   Data::Rx::Tools::ShareDirValidator:
     file: lib/Data/Rx/Tools/ShareDirValidator.pm
-    version: v0.1.2
+    version: v0.1.3
 requires:
   Carp: 0
   Data::Rx: 0
   File::ShareDir: 0
   JSON: 0
-  Path::Class::Dir: 0
+  Path::Tiny: 0
   Scalar::Util: 0
   perl: v5.10.0
   strict: 0
@@ -41,7 +41,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Data-Rx-Tools-ShareDirValidator/issues
   homepage: https://github.com/kentfredric/Data-Rx-Tools-ShareDirValidator
   repository: https://github.com/kentfredric/Data-Rx-Tools-ShareDirValidator.git
-version: 0.1.2
+version: 0.1.3
 x_BuiltWith:
   modules:
     Carp: 1.28
@@ -54,7 +54,7 @@ x_BuiltWith:
     FindBin: 1.51
     JSON: 2.53
     Module::Build: 0.4004
-    Path::Class::Dir: 0.32
+    Path::Tiny: 0.017
     Pod::Coverage::TrustPod: 0.100002
     Scalar::Util: 1.27
     Test::CPAN::Meta: 0.22
